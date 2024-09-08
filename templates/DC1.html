@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>某地智能无人车管理系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/DC1.css') }}">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>某地智能无人车管理系统</h1>
+        </header>
+        <div class="main-content">
+            <div class="column column-1">
+                <div class="map">
+                    <img src="{{ url_for('static', filename='jpg/map-image.jpg') }}" alt="某地地图">
+                </div>
+                <div class="attributes">
+                    <h2>智能车属性</h2>
+                    <p>这里是关于智能车属性的详细描述。</p>
+                </div>
+            </div>
+            <div class="column column-2">
+                <div class="debug-info">
+                    <h2>调试信息</h2>
+                    <textarea rows="10" placeholder="显示调试信息..."></textarea>
+                </div>
+            </div>
+            <div class="column column-3">
+                <div class="controls">
+                    <button class="control-button" onclick="bt1()">功能1</button>
+                    <button class="control-button" onclick="bt2()">功能2</button>
+                    <button class="control-button" onclick="bt3()">功能3</button>
+                    <button class="control-button" onclick="bt4()">功能4</button>
+                    <button class="control-button" onclick="bt5()">功能5</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function bt1() {
+            var command1 = 1;
+            var command2 = 1;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Response');
+                }
+            };
+            xhr.send('command1=' + encodeURIComponent(command1) + '&command2=' + encodeURIComponent(command2));
+            console.log("1");
+            
+        }
+
+        function bt2() {
+            var command1 = 1;
+            var command2 = 2;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Response');
+                }
+            };
+            xhr.send('command1=' + encodeURIComponent(command1) + '&command2=' + encodeURIComponent(command2));
+            console.log("1");
+            
+        }
+
+        function bt3() {
+            var command1 = 1;
+            var command2 = 3;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Response');
+                }
+            };
+            xhr.send('command1=' + encodeURIComponent(command1) + '&command2=' + encodeURIComponent(command2));
+            console.log("1");
+            
+        }
+
+        function bt4() {
+            var command1 = 1;
+            var command2 = 4;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Response');
+                }
+            };
+            xhr.send('command1=' + encodeURIComponent(command1) + '&command2=' + encodeURIComponent(command2));
+            console.log("1");
+            
+        }
+
+        function bt5() {
+            var command1 = 1;
+            var command2 = 5;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Response');
+                }
+            };
+            xhr.send('command1=' + encodeURIComponent(command1) + '&command2=' + encodeURIComponent(command2));
+            console.log("1");
+            
+        }
+        
+    </script>
+</body>
+</html>
