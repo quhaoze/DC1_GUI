@@ -81,9 +81,9 @@ def index():
         command2 = request.form.get('command2')
         print(command1)
         print(command2)
-        if command1 == "1" and command2 == "2":
+        if command1 == "1" and command2 == "1":
             iot_client.publish_message(r'/test/M2M/GUI/device1', "按下了按钮1")
-            print("按下了按钮1")
+            print("已向华为云平台发送消息：按下了按钮1")
         return "Commands received", 200
 
 
