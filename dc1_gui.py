@@ -68,7 +68,10 @@ socketio = SocketIO(app)
 @socketio.on('connect')
 def handle_connect():
     print("客户端已连接")
-    emit('server_message', {'data': '欢迎连接到 WebSocket 服务器！'})
+    emit('server_message_locate', {'data': '已经连接到websocket服务器'})
+    emit('server_message_battery', {'data': '已经连接到websocket服务器'})
+    emit('server_message_workmode', {'data': '已经连接到websocket服务器'})
+
 
 @app.route("/", methods=['GET', 'POST'])
 # url映射的函数，要传参则在上述route（路由）中添加参数申明

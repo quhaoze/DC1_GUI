@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <h1 id = "message">某地智能无人车管理系统</h1>
+            <h1>某地智能无人车管理系统</h1>
         </header>
         <div class="main-content">
             <div class="column column-1">
@@ -19,13 +19,15 @@
                 </div>
                 <div class="attributes">
                     <h2>智能车属性</h2>
-                    <p>这里是关于智能车属性的详细描述。</p>
+                    <p id="message_locate">这里是关于智能车属性的详细描述。</p>
+                    <p id="message_battery">这里是关于智能车属性的详细描述。</p>
+                    <p id="message_workmode">这里是关于智能车属性的详细描述。</p>
                 </div>
             </div>
             <div class="column column-2">
                 <div class="debug-info">
                     <h2>调试信息</h2>
-                    <textarea rows="10" placeholder="显示调试信息..."></textarea>
+                    <textarea rows="2" cols="50" placeholder="显示调试信息..."></textarea>
                 </div>
             </div>
             <div class="column column-3">
@@ -45,8 +47,16 @@
         var socket = io();
 
         // 当连接成功时，服务器会发送一条消息
-        socket.on('server_message', function(data) {
-            document.getElementById('message').innerHTML = data.data;
+        socket.on('server_message_locate', function(data) {
+            document.getElementById('message_locate').innerHTML = data.data;
+        });
+
+        socket.on('server_message_battery', function(data) {
+            document.getElementById('message_battery').innerHTML = data.data;
+        });
+
+        socket.on('server_message_workmode', function(data) {
+            document.getElementById('message_workmode').innerHTML = data.data;
         });
 
     </script>
