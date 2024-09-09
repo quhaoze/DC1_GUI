@@ -8,6 +8,7 @@ class DeviceMessage:
         self.__id = None
         self.__name = None
         self.__content = None
+        self.__topic = None
         self.__message = message
         self.__set_message()
 
@@ -20,6 +21,8 @@ class DeviceMessage:
             self.__name = self.__message['name']
         if 'content' in self.__message.keys():
             self.__content = self.__message['content']
+        if 'topic' in self.__message['topic']:
+            self.__topic = self.__message.keys()
 
     @property
     def device_id(self):

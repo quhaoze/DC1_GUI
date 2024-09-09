@@ -1,4 +1,4 @@
-# request：包含前端发送过来的所有请求数据
+# 现在需要写的是：只有message.content，但是没有message.topic，需要手写一个这个
 import logging
 import time
 import threading
@@ -47,9 +47,9 @@ time.sleep(1)
 def message_callback(device_message):
     print("收到消息")
     received_content = device_message.content
-    #received_topic = device_message.topic
+    received_topic = device_message.topic
     print(change2original(eval(received_content)))
-    #print(change2original(eval(received_topic)))
+    print(received_topic)
 
 
 
