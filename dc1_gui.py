@@ -47,8 +47,10 @@ time.sleep(1)
 def message_callback(device_message):
     print("收到消息")
     received_content = device_message.content
-    # receive_topic = device_message.topic
+    #received_topic = device_message.topic
     print(change2original(eval(received_content)))
+    #print(change2original(eval(received_topic)))
+
 
 
 # 设置平台下发自定义topic消息响应的回调
