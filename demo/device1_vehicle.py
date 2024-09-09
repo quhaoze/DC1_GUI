@@ -11,8 +11,6 @@ import time
 import threading
 from IoT_device.client import IoTClientConfig, IotClient
 import base64
-import numpy as np
-import cv2
 import pickle
 # 日志设置
 logging.basicConfig(level=logging.INFO)
