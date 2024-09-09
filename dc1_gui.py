@@ -6,6 +6,7 @@ from IoT_device.client import IoTClientConfig, IotClient
 import base64
 import pickle
 from flask import Flask, render_template, request
+from flask_socketio import SocketIO, emit
 
 client_cfg = IoTClientConfig(server_ip='9904a57d85.st1.iotda-device.cn-north-4.myhuaweicloud.com',
                              device_id='66d3024ef1d7e406fa978968_device3_GUI',
@@ -62,7 +63,12 @@ iot_client.start()  # 线程启动
 
 # 用当前脚本名称实例化Flask对象，方便flask从该脚本文件中获取需要的内容
 app = Flask(__name__)
+socketio = SocketIO(app)
 
+@socketio.on('connect')
+def handle_connect():
+    print("客户端已连接")
+    emit('server_message', {'data': '欢迎连接到 WebSocket 服务器！'})
 
 @app.route("/", methods=['GET', 'POST'])
 # url映射的函数，要传参则在上述route（路由）中添加参数申明

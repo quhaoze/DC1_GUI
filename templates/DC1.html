@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>某地智能无人车管理系统</h1>
+            <h1 id = "message">某地智能无人车管理系统</h1>
         </header>
         <div class="main-content">
             <div class="column column-1">
@@ -39,6 +39,17 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+        // 连接到 WebSocket 服务器
+        var socket = io();
+
+        // 当连接成功时，服务器会发送一条消息
+        socket.on('server_message', function(data) {
+            document.getElementById('message').innerHTML = data.data;
+        });
+
+    </script>
     <script>
         function bt1() {
             var command1 = 1;
