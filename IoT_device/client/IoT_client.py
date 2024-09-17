@@ -281,8 +281,7 @@ class IotClient(threading.Thread):
 
     def __on_other(self, msg):
         print("进入on_other了")
-        device_message = DeviceMessage(json.loads(msg.payload))
-
+        device_message = DeviceMessage(json.loads(msg.payload),msg.topic)
         if msg.topic in self.__user_defined_topic:
             print("进入第一层if了")
             if self.__user_topic_message_callback != None and (

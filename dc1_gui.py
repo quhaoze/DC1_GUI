@@ -1,4 +1,4 @@
-# 现在需要写的是：只有message.content，但是没有message.topic，需要手写一个这个
+# 现在需要写的是：根据topic显示在界面上具体的数据，还有
 import logging
 import time
 import threading

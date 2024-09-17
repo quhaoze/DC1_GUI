@@ -1,14 +1,10 @@
-# -*- encoding: utf-8 -*-
-'''设备消息
-'''
-
 class DeviceMessage:
-    def __init__(self, message=dict()):
+    def __init__(self, message=dict(),topic=None):
         self.__object_device_id = None
         self.__id = None
         self.__name = None
         self.__content = None
-        self.__topic = None
+        self.__topic = topic
         self.__message = message
         self.__set_message()
 
@@ -21,8 +17,8 @@ class DeviceMessage:
             self.__name = self.__message['name']
         if 'content' in self.__message.keys():
             self.__content = self.__message['content']
-        if 'topic' in self.__message['topic']:
-            self.__topic = self.__message.keys()
+        if 'topic' in self.__message.keys():
+            self.__topic = self.__message['topic']
 
     @property
     def device_id(self):
@@ -55,3 +51,12 @@ class DeviceMessage:
     @content.setter
     def content(self, value):
         self.__content = value
+
+    # 添加 topic 的 property 访问器
+    @property
+    def topic(self):
+        return self.__topic
+
+    @topic.setter
+    def topic(self, value):
+        self.__topic = value
